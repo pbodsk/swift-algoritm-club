@@ -46,7 +46,91 @@ example(of: "inserting") {
 
     print("after insertion")
     print(linkedList)
+}
 
+example(of: "pop") {
+    var linkedList = LinkedList<Int>()
+    
+    linkedList.push(3)
+    linkedList.push(2)
+    linkedList.push(1)
+
+    print("before pop")
+    print(linkedList)
+    linkedList.pop()
+    print("after pop 1")
+    print(linkedList)
+    
+    linkedList.pop()
+    print("after pop 2")
+    print(linkedList)
+    
+    linkedList.pop()
+    print("after pop 3")
+    print(linkedList)
+    
+    linkedList.pop()
+    print("after pop 4")
+    print(linkedList)
+}
+
+example(of: "pop") {
+    var linkedList = LinkedList<Int>()
+    
+    linkedList.push(3)
+    linkedList.push(2)
+    linkedList.push(1)
+    
+    print("before removeLast")
+    print(linkedList)
+    print(linkedList.removeLast() ?? -1)
+    print("after removeLast")
+    print(linkedList)
+    
+    print(linkedList.removeLast() ?? -1)
+    print("after removeLast")
+    print(linkedList)
+    
+    print(linkedList.removeLast() ?? -1)
+    print("after removeLast")
+    print(linkedList)
+    
+    print(linkedList.removeLast() ?? -1)
+    print("after removeLast")
+    print(linkedList)
+}
+
+example(of: "remove after") {
+    var linkedList = LinkedList<Int>()
+    
+    linkedList.push(4)
+    linkedList.push(3)
+    linkedList.push(2)
+    linkedList.push(1)
+
+    print("before remove")
+    print(linkedList)
+
+    let middleNode = linkedList.node(at: 1)
+    linkedList.remove(after: middleNode!)
+    
+    print("after remove")
+    print(linkedList)
+}
+
+example(of: "using collection") {
+    var linkedList = LinkedList<Int>()
+    
+    for i in 0...9 {
+        linkedList.append(i)
+    }
+    
+    print("List: \(linkedList)")
+    print("First element \(linkedList[linkedList.startIndex])")
+    print("Array with first 3 elements: \(Array(linkedList.prefix(3)))")
+    print("Array with last 3 elements: \(Array(linkedList.suffix(3)))")
+    let sum = linkedList.reduce(0, +)
+    print("Sum: \(sum)")
 }
 
 
