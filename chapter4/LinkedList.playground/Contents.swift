@@ -133,4 +133,26 @@ example(of: "using collection") {
     print("Sum: \(sum)")
 }
 
+example(of: "COW") {
+    var list1 = LinkedList<Int>()
+    list1.push(1)
+    list1.push(2)
+    
+    print("list1 before copy")
+    print(list1)
+    
+    print("list1 uniquely referenced: \(isKnownUniquelyReferenced(&list1.head))")
+    
+    var list2 = list1
+    list2.push(3)
+
+    print("list1 uniquely referenced: \(isKnownUniquelyReferenced(&list1.head))")
+
+    print("list1 after copy")
+    print(list1)
+    print("list2 after copy")
+    print(list2)
+
+}
+
 
